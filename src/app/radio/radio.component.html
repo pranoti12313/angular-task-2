@@ -1,0 +1,41 @@
+<div class="container mt-4">
+    <form>
+      <div class="form-row">
+        <div class="form-group col-sm-6">
+          <label for="fName">First Name</label>
+          <input type="text" class="form-control" id="fName">
+        </div>
+        <div class="form-group col-sm-6">
+          <label for="lName">Last Name</label>
+          <input type="text" class="form-control" id="lName">
+        </div>
+
+        <div class="form-group col-sm-6">
+
+          <label for="inputState">How should we contact you?</label><br>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions"  value="option1" [(ngModel)]="selectedOption">
+            <label class="form-check-label" for="inlineRadio1">Phone</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions"  value="option2"  [(ngModel)]="selectedOption">
+            <label class="form-check-label" for="inlineRadio2">Email</label>
+          </div>
+         
+        </div>
+        <div class="form-group col-sm-6">
+          <div *ngIf="selectedOption === 'option1'">
+            <label for="phone">Phone Number</label>
+            <input type="text" class="form-control"  [(ngModel)]="phoneNumber"  name="inlineRadioOptions" >
+          </div>
+          <div *ngIf="selectedOption === 'option2'">
+            <label for="email">Email Address</label>
+            <input type="email" class="form-control"  [(ngModel)]="emailAddress"  name="inlineRadioOptions" >
+          </div> 
+        </div>
+       
+       
+      </div>
+      </form>
+    
+  </div>
